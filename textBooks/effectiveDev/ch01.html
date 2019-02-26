@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html><html xmlns:epub="http://www.idpf.org/2007/ops" xmlns="http://www.w3.org/1999/xhtml"><head><title>The Big Picture</title><link rel="stylesheet" type="text/css" href="epub.css"/></head><body data-type="book"><section data-type="chapter" epub:type="chapter" data-pdf-bookmark="Chapter 1. The Big Picture"><div class="chapter" id="thebigpicture">
-<h1><span class="label">Chapter 1. </span>The Big Picture</h1>
-
+<
 
 <p>Devops is a way of thinking and a way of working. It is a framework for sharing stories and developing empathy, enabling people and teams to practice their crafts in effective and lasting ways. It is part of the cultural weave that shapes how we work and why. Many people think about devops as specific tools like Chef or Docker, but tools alone are not devops. What makes tools “devops” is the manner of their use, not fundamental characteristics of the tools themselves.</p>
 
@@ -13,11 +12,7 @@
 
 
 
-
-<section data-type="sect1" data-pdf-bookmark="A Snapshot of Devops Culture"><div class="sect1" id="idm140382642191104">
-<h1>A Snapshot of Devops Culture</h1>
-
-<p><a data-type="indexterm" data-primary="devops culture" data-secondary="at Etsy" id="ix_thebigpicture-asciidoc0"/><a data-type="indexterm" data-primary="Etsy" data-secondary="devops culture at" id="ix_thebigpicture-asciidoc1"/>What does a successful devops culture look like? To demonstrate this, we will examine the intersection of people, process, and tools at Etsy, an online global marketplace for handmade and vintage goods. We chose Etsy as an example not only because they are well-known in the industry for their technical and cultural practices, but also because Ryn’s experiences working there allow us a more detailed look at what this culture looks like from the inside.</p>
+<p>What does a successful devops culture look like? To demonstrate this, we will examine the intersection of people, process, and tools at Etsy, an online global marketplace for handmade and vintage goods. We chose Etsy as an example not only because they are well-known in the industry for their technical and cultural practices, but also because Ryn’s experiences working there allow us a more detailed look at what this culture looks like from the inside.</p>
 
 <p>A new engineer at Etsy starts her first day with a laptop and a development virtual machine (VM) already set up with the appropriate accounts for access and authorization, the most common GitHub repositories cloned, aliases and shortcuts to relevant tools precreated, and a guide with new hire information and links to other company resources on her desktop. Standardization of tools and practices between teams makes it easier for new people to get up to speed regardless of what team they are joining, but every team also has the flexibility to customize as they see fit.</p>
 
@@ -25,13 +20,13 @@
 
 <p>Etsy engineers can achieve a good degree of confidence that a change is working locally by running a suite of local unit and functional tests. From there, they test changes against the <a href="http://bit.ly/etsy-try">try server</a>, a Jenkins cluster nearly identical to the organization’s production continuous integration (CI) cluster but with the added bonus of not requiring any code to be committed to the master branch yet. When try passes, engineers have an even higher degree of confidence that their changes will not break any tests.</p>
 
-<p>Depending on the size and complexity of the change, this new engineer might choose to open a pull request or more informally ask for a code review from one of her colleagues. This is not mandated for every change, and is often left up to individual discretion—in <a data-type="indexterm" data-primary="blamelessness" data-secondary="at Etsy" id="idm140382642200352"/>Etsy’s high-trust, blameless environment, people are given the trust and authority to decide whether a code review is necessary. Newer or more junior employees are given the guidance to help them figure out what changes merit a code review and who should be involved. As a new employee, she has a teammate glance over her changes before she starts deploying them.</p>
+<p>Depending on the size and complexity of the change, this new engineer might choose to open a pull request or more informally ask for a code review from one of her colleagues. This is not mandated for every change, and is often left up to individual discretion—in Etsy’s high-trust, blameless environment, people are given the trust and authority to decide whether a code review is necessary. Newer or more junior employees are given the guidance to help them figure out what changes merit a code review and who should be involved. As a new employee, she has a teammate glance over her changes before she starts deploying them.</p>
 
-<p><a data-type="indexterm" data-primary="Etsy" data-secondary="push queue" id="idm140382642183392"/>When local and try tests have passed, the developer then joins what Etsy calls a <em>push queue</em> to deploy her changes to production. This queue system uses Internet Relay Chat (IRC) and an IRC bot to coordinate deploys when multiple developers are pushing changes at once. When it is her turn, she pushes her commits to the master branch of the repository she is working in and uses <a href="https://github.com/etsy/deployinator">Deployinator</a> to deploy these changes to QA. This automatically starts builds on the QA server as well as running the full CI test suite.</p>
+<p>When local and try tests have passed, the developer then joins what Etsy calls a push queue to deploy her changes to production. This queue system uses Internet Relay Chat (IRC) and an IRC bot to coordinate deploys when multiple developers are pushing changes at once. When it is her turn, she pushes her commits to the master branch of the repository she is working in and uses  to deploy these changes to QA. This automatically starts builds on the QA server as well as running the full CI test suite.</p>
 
 <p>After the builds and tests have completed successfully, she does a quick manual check of the QA version of the site and its logs to look for any problems that weren’t caught by the automated tests. From there, she uses the same Deployinator process to deploy her code to production and make sure that the tests and logs look good there as well. If something does break that the tests don’t catch, there are plenty of dashboards of graphs to watch, and Nagios monitoring checks to alert people to problems. In addition, many teams have their own Nagios checks that go to their own on-call rotations, encouraging everyone to share the responsibilities of keeping everything running smoothly. And if something doesn’t run so smoothly, people work together to help fix any issues, and blameless postmortems mean that people learn from their mistakes without being chastised for making them.</p>
 
-<p>This process is so streamlined that it takes only around 10 minutes on average from start to finish, and Etsy engineering as a whole deploys around 60 times a day. Documentation is available for anyone interested to peruse, and every engineer pushes code to production on their first day, guided by a current team member to help familiarize them with the process. <a data-type="indexterm" data-primary="Etsy" data-secondary="First Push Program" id="idm140382642188176"/>Even nonengineers are encouraged to participate by way of the <em>First Push Program</em>, pairing with engineers to deploy a small change such as adding their photo to the staff page on the website. In addition to being used for regular software development, the try and Deployinator process works so well that it is used for nearly everything that can be deployed, from the tools that developers use to build virtual machines to Kibana dashboards for searching logs, from Nagios monitoring checks to the Deployinator tool itself.<a data-type="indexterm" data-startref="ix_thebigpicture-asciidoc1" id="idm140382642186192"/><a data-type="indexterm" data-startref="ix_thebigpicture-asciidoc0" id="idm140382642180704"/></p>
+<p>This process is so streamlined that it takes only around 10 minutes on average from start to finish, and Etsy engineering as a whole deploys around 60 times a day. Documentation is available for anyone interested to peruse, and every engineer pushes code to production on their first day, guided by a current team member to help familiarize them with the process. Even nonengineers are encouraged to participate by way of the First Push Program, pairing with engineers to deploy a small change such as adding their photo to the staff page on the website. In addition to being used for regular software development, the try and Deployinator process works so well that it is used for nearly everything that can be deployed, from the tools that developers use to build virtual machines to Kibana dashboards for searching logs, from Nagios monitoring checks to the Deployinator tool itself.</p>
 </div></section>
 
 
@@ -47,20 +42,20 @@
 
 
 <section data-type="sect1" data-pdf-bookmark="The Evolution of Culture"><div class="sect1" id="idm140382642179936">
-<h1>The Evolution of Culture</h1>
 
-<p><a data-type="indexterm" data-primary="devops culture" data-secondary="evolution of" id="ix_thebigpicture-asciidoc2"/><a data-type="indexterm" data-primary="evolution of devops culture" id="ix_thebigpicture-asciidoc3"/>This story of Etsy today  is in stark contrast to how things were several years ago with a less transparent and more error-prone deployment process that took close to four hours. Developers had their own blade servers to work on, rather than virtual machines, but the blade servers weren’t powerful enough to run the automated test suites to completion. Tests that were run in the staging environment took a couple of hours to complete, and even then they were flaky enough to make their results less than useful.</p>
 
-<p>Teams within the engineering organization were siloed. There were a lot of developers throwing code over the metaphorical wall to ops, who were solely responsible for deployments and monitoring and thus tended to be incredibly change-averse. Developers wrote code, executing handcrafted shell scripts to create a new SVN branch which would be deployed using <code>svn merge</code>—not known for being the easiest merging tool to work with—to merge in all the developers’ changes to this deploy branch. Developers would tell the one operations engineer who had permissions to deploy which branch to use. This would begin the painstaking, multihour deployment process (see <a data-type="xref" href="#before_deployinator">Figure 1-1</a>). Because the process was so painful, it happened only once every two or three weeks.</p>
+<p>This story of Etsy today  is in stark contrast to how things were several years ago with a less transparent and more error-prone deployment process that took close to four hours. Developers had their own blade servers to work on, rather than virtual machines, but the blade servers weren’t powerful enough to run the automated test suites to completion. Tests that were run in the staging environment took a couple of hours to complete, and even then they were flaky enough to make their results less than useful.</p>
+
+<p>Teams within the engineering organization were siloed. There were a lot of developers throwing code over the metaphorical wall to ops, who were solely responsible for deployments and monitoring and thus tended to be incredibly change-averse. Developers wrote code, executing handcrafted shell scripts to create a new SVN branch which would be deployed using <code>svn merge</code>—not known for being the easiest merging tool to work with—to merge in all the developers’ changes to this deploy branch. Developers would tell the one operations engineer who had permissions to deploy which branch to use. This would begin the painstaking, multihour deployment process. Because the process was so painful, it happened only once every two or three weeks.</p>
 
 <figure><div id="before_deployinator" class="figure">
-<img src="assets/dops_0101.png" alt="Before Deployinator, a complex and error-prone deploy process"/>
+
 <h6><span class="label">Figure 1-1. </span>Before Deployinator, a complex and error-prone deploy process</h6>
 </div></figure>
 
 <p>People became fed up with this process. They realized something had to change. It would be hard for the deployment situation to get any worse. The organization was made up of smart and talented people with the motivation and now frustration to solve this problem. They had buy-in from the CEO and CTO down, which was key to having resources available to make change.</p>
 
-<p>The keys to the deployment kingdom were shared from the one operations engineer to two developers, who were given the time and go-ahead to hack on this process as much as they needed. <a data-type="indexterm" data-primary="Deployinator" id="idm140382642168784"/>They say when you have a hammer, everything looks like a nail, and when you have a web application developer, everything looks like it needs a web app—and so the first Deployinator was born (<a data-type="xref" href="#after_deployinator">Figure 1-2</a>). At first, it was a web wrapper around the existing shell scripts, but over time, more people began to work and improve it. While the underlying mechanisms doing the heavy lifting changed, the overall interface stayed largely the same.</p>
+<p>The keys to the deployment kingdom were shared from the one operations engineer to two developers, who were given the time and go-ahead to hack on this process as much as they needed. They say when you have a hammer, everything looks like a nail, and when you have a web application developer, everything looks like it needs a web app—and so the first Deployinator was born . At first, it was a web wrapper around the existing shell scripts, but over time, more people began to work and improve it. While the underlying mechanisms doing the heavy lifting changed, the overall interface stayed largely the same.</p>
 
 <p>It became evident to everyone that empowering these employees to create tools to improve their jobs made it a lot easier for people to do said jobs. Deploys went from being in people’s way to helping them accomplish the goal of getting features in front of users. Tests went from being flaky wastes of time to helping catch bugs. Logs, graphs, and alerts made it possible for everyone, not just a select few individuals, to see the impact of their work.</p>
 
@@ -141,8 +136,7 @@
 
 
 
-<section data-type="sect1" data-pdf-bookmark="Jennifer’s Story"><div class="sect1" id="idm140382642145824">
-<h1>Jennifer’s Story</h1>
+
 
 <p><a data-type="indexterm" data-primary="Yahoo" id="ix_thebigpicture-asciidoc7"/>In 2007, I was contacted by Yahoo management about a position that was “a little dev” and “a little ops”—a Senior Service Engineer position building out a multitenanted, hosted, distributed, and geographically replicated key/value data store called Sherpa.</p>
 
@@ -154,17 +148,13 @@
 
 <p>I came back from vacation to a degraded service. So many small issues that I had found over the years impacted the overall event, making it more difficult to debug. I felt like a complete failure, even though my last-minute visualization had been critical to identifying and monitoring the issue.</p>
 
-<p>Jeff took me aside and said that he knew there was a high risk that things would break while I was out and additional risk of issues resulting from the team’s historical complete reliance on me.  My <em>heroics</em> were disguising the failures inherent in the system.</p>
+<p>Jeff took me aside and said that he knew there was a high risk that things would break while I was out and additional risk of issues resulting from the team’s historical complete reliance on me.  My heroics were disguising the failures inherent in the system.</p>
 
 <p>He felt that sometimes short-term setbacks are an OK thing, if you later use them as a lesson to right things over the long term. If things broke, it would help prioritize the criticality of further sharing, documenting, and distributing my knowledge and expertise to the business. Ultimately, that would lead to more stability and a better overall outcome for the organization and individuals on the team.</p>
 
 <p>That event united the Sherpa team as we tried to repair the service and understand what happened. We divided into cross-functional teams to address the different components of the problem: failure handlers, communication group, tools, monitoring, and cleanup crew. Key individuals from management were available at all times and prepared to make hard decisions. These hard decisions helped us limit the overall length of the outage.</p>
-<blockquote>
-<p><a data-type="indexterm" data-primary="Sutton, Bob" id="idm140382642131456"/>Failure sucks but instructs.</p>
-<p data-type="attribution">Bob Sutton, <cite>Stanford Management Instructor</cite></p>
-</blockquote>
 
-<p><a data-type="indexterm" data-primary="failures" data-secondary="value of" id="idm140382642137360"/>A key takeaway from this event for me was the value of failure. We couldn’t be afraid to fail, and we needed to learn from the failure. We had ongoing meetings to resolve the operational issues that had been highlighted in the event. We continued to remediate outages as a cross-discipline team rather than limiting those activities to the Service Engineering team. We promoted discussions between our consumers and providers to better understand the weak points in the system.</p>
+<p>A key takeaway from this event for me was the value of failure. We couldn’t be afraid to fail, and we needed to learn from the failure. We had ongoing meetings to resolve the operational issues that had been highlighted in the event. We continued to remediate outages as a cross-discipline team rather than limiting those activities to the Service Engineering team. We promoted discussions between our consumers and providers to better understand the weak points in the system.</p>
 
 <p>Having spent over 10 years building work practices based on operations’ tribal cultures of long hours, isolation, and avoiding system failures, how was I going to evoke the change I needed?</p>
 
@@ -172,8 +162,8 @@
 
 <p>Collaborating with Ryn on this book has strengthened my understanding of devops. Being able to share the working strategies and techniques from around the world to help improve and create sustainable work practices has been an incredible journey. It doesn’t end with the final words in this book.</p>
 
-<p>We are all gaining so much experience each and every day based on our different, diverse perspectives. Whether you are at the beginning of your career, knee-deep in cultural transformation, or about to change roles and responsibilities, your experiences can inform and educate others. I look forward to hearing and amplifying your stories so that together we grow as a community and collectively learn from our failures and successes.<a data-type="indexterm" data-startref="ix_thebigpicture-asciidoc7" id="idm140382642120976"/></p>
-</div></section>
+<p>We are all gaining so much experience each and every day based on our different, diverse perspectives. Whether you are at the beginning of your career, knee-deep in cultural transformation, or about to change roles and responsibilities, your experiences can inform and educate others. I look forward to hearing and amplifying your stories so that together we grow as a community and collectively learn from our failures and successes.</p>
+
 
 
 

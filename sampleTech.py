@@ -6,6 +6,9 @@ import nltk
 nltk.download('punkt')
 nltk.download('stopwords')
 
+"""
+Gathering data from a sample chapter
+"""
 print(os.getcwd())
 fp = open("textBooks/effectiveDev/ch01.html", "r")
 parsed_article = bs.BeautifulSoup(fp, 'lxml')
@@ -20,7 +23,10 @@ article_text = ""
 for p in paragraphs:
     article_text += p.text
 
-
+"""Cleaning Data
+"""
+article_text = re.sub(r'\[[0-9]*\]', ' ', article_text)
+article_text = re.sub(r'\s+', ' ', article_text)
 formatted_article_text = re.sub('[^a-zA-Z]', ' ', article_text )
 formatted_article_text = re.sub(r'\s+', ' ', formatted_article_text)
 
@@ -28,6 +34,9 @@ sentence_list = nltk.sent_tokenize(article_text)
 
 stopwords = nltk.corpus.stopwords.words('english')
 
+"""
+Gathing setence scores and ranking them
+"""
 word_frequencies = {}
 for word in nltk.word_tokenize(formatted_article_text):
     if word not in stopwords:
