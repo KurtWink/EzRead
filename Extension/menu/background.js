@@ -30,23 +30,6 @@ function onError(error) {
 Create all the context menu items.
 */
 
-browser.menus.create({
-  id: "bluify",
-  type: "radio",
-  title: browser.i18n.getMessage("menuItemBluify"),
-  contexts: ["all"],
-  checked: false,
-  icons: {
-    "16": "icons/paint-blue-16.png",
-    "32": "icons/paint-blue-32.png"
-  }
-}, onCreated);
-
-browser.menus.create({
-  id: "separator-2",
-  type: "separator",
-  contexts: ["all"]
-}, onCreated);
 
 var checkedState = true;
 
@@ -55,9 +38,14 @@ browser.menus.create({
   title: browser.i18n.getMessage("menuEzRead"),
   contexts: ["selection"]
 }, onCreated);
+browser.menus.create({
+  id: "separator-1",
+  type: "separator",
+  contexts: ["all"]
+}, onCreated);
 
 browser.menus.create({
-  id: "open-sidebar",
+  id: "open-options",
   title: browser.i18n.getMessage("menuItemOpenSidebar"),
   contexts: ["all"],
   command: "_execute_sidebar_action"

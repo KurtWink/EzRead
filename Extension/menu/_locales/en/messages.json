@@ -34,7 +34,7 @@
     "description": "Title of context menu item that opens launches ezRead highlighted text."
   },
   "menuItemOpenSidebar": {
-    "message": "Open sidebar",
+    "message": "EzRead Options",
     "description": "Title of context menu item that opens a sidebar."
   },
 

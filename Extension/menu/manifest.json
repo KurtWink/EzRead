@@ -29,7 +29,7 @@
 
   "sidebar_action": {
     "default_icon": "icons/page-32.png",
-    "default_title" : "My sidebar",
+    "default_title" : "Option Bar",
     "default_panel": "sidebar/sidebar.html"
   }
 
