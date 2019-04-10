@@ -6,7 +6,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
 # If modifying these scopes, delete the file token.pickle.
-SCOPES = ['https://www.googleapis.com/auth/documents.readonly']
+SCOPES = ['https://www.googleapis.com/auth/documents', 'https://www.googleapis.com/auth/drive','https://www.googleapis.com/auth/drive.file']
 
 # The ID of a sample document.
 DOCUMENT_ID = '195j9eDD3ccgjQRttHhJPymLJUCOUjs-jmwTrekvdjFE'
@@ -37,7 +37,12 @@ def main():
     service = build('docs', 'v1', credentials=creds)
 
     # Retrieve the documents contents from the Docs service.
-    document = service.documents().get(documentId=DOCUMENT_ID).execute()
+    #document = service.documents().get(documentId=DOCUMENT_ID).execute()
+    title = 'My Document'
+    body = {
+        'title': title
+    }
+    document = service.documents().create(body=body).execute()
 
     print('The title of the document is: {}'.format(document.get('title')))
 
