@@ -109,10 +109,28 @@ browser.menus.onClicked.addListener((info, tab) => {
       console.log("Opening my sidebar");
       break;
     case "open-EzRead":
-      console.log(info.selectionText);
+      processAJAX(info.selectionText);
       break;
     case "tools-menu":
       console.log("Clicked the tools menu item");
       break;
   }
 });
+/*
+Function that sends a HTTP request with selected text over to a websever for processing
+*/
+function processAJAX(selection){
+   if(selection == ""){
+       break;}
+   var xhr = new XMLHttpRequest();
+   var url = "url";
+   xhr.open("POST", url, true);
+   xhr.setRequestHeader("Content-Type", "application/json");
+   xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+           var json = JSON.parse(xhr.responseText);
+       }
+   };
+   var data = JSON.stringify({selection});
+   xhr.send(data);
+}
