@@ -12,8 +12,8 @@ SCOPES = ['https://www.googleapis.com/auth/documents', 'https://www.googleapis.c
 DOCUMENT_ID = '195j9eDD3ccgjQRttHhJPymLJUCOUjs-jmwTrekvdjFE'
 
 def main():
-    """Shows basic usage of the Docs API.
-    Prints the title of a sample document.
+    """Uses the Docs API.
+    Makes a new document with a summery from POST request.
     """
     creds = None
     # The file token.pickle stores the user's access and refresh tokens, and is

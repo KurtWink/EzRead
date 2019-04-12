@@ -94,6 +94,28 @@ function updateCheckUncheck() {
 }
 
 /*
+Function that sends a HTTP request with selected text over to a websever for processing
+*/
+function processAJAX(selection){
+   if(selection == ""){
+       return;}
+   var xhr = new XMLHttpRequest();
+   var url = "url";
+   xhr.open("POST", url, true);
+   xhr.setRequestHeader("Content-Type", "application/json");
+   xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+           var json = JSON.parse(xhr.responseText);
+       }
+   };
+   var data = JSON.stringify({selection});
+   xhr.send(data);
+}
+
+
+
+
+/*
 The click event listener, where we perform the appropriate action given the
 ID of the menu item that was clicked.
 */
@@ -116,21 +138,4 @@ browser.menus.onClicked.addListener((info, tab) => {
       break;
   }
 });
-/*
-Function that sends a HTTP request with selected text over to a websever for processing
-*/
-function processAJAX(selection){
-   if(selection == ""){
-       break;}
-   var xhr = new XMLHttpRequest();
-   var url = "url";
-   xhr.open("POST", url, true);
-   xhr.setRequestHeader("Content-Type", "application/json");
-   xhr.onreadystatechange = function () {
-       if (xhr.readyState === 4 && xhr.status === 200) {
-           var json = JSON.parse(xhr.responseText);
-       }
-   };
-   var data = JSON.stringify({selection});
-   xhr.send(data);
-}
+
