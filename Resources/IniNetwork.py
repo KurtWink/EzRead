@@ -9,7 +9,7 @@ import tensorflow_hub as hub
 from collections import Counter
 from langdetect import detect
 
-import Summarizer
+from Resources import Summarizer
 import summarizer_data_utils
 import summarizer_model_utils
 
@@ -156,7 +156,7 @@ summarizer = Summarizer.Summarizer(word2ind,
                                    learning_rate_decay = learning_rate_decay,
                                    epochs = epochs,
                                    pretrained_embeddings_path = pretrained_embeddings_path,
-                                   use_cyclic_lr = use_cyclic_lr,)
+                                   use_cyclic_lr = use_cyclic_lr, )
 #                                    summary_dir = summary_dir)
 
 summarizer.build_graph()
