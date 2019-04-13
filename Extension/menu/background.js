@@ -100,7 +100,7 @@ function processAJAX(selection){
    if(selection == ""){
        return;}
    var xhr = new XMLHttpRequest();
-   var url = "url";
+   var url = "http://localhost:5000/ezRead/endpoint";
    xhr.open("POST", url, true);
    xhr.setRequestHeader("Content-Type", "application/json");
    xhr.onreadystatechange = function () {
