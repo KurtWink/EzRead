@@ -100,7 +100,7 @@ function processAJAX(selection){
    if(selection == ""){
        return;}
    var xhr = new XMLHttpRequest();
-   var url = "http://localhost:5000/ezRead/endpoint";
+   var url = "http://winkkurt.pythonanywhere.com/ezRead/endpoint";
    xhr.open("POST", url, true);
    xhr.setRequestHeader("Content-Type", "application/json");
    xhr.onreadystatechange = function () {
