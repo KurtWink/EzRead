@@ -1,3 +1,4 @@
+/**This code is modified by a developer sample from firefox
 /*
 Called when the item has been created, or when creation failed due to an error.
 We'll just log success/failure here.
@@ -38,19 +39,16 @@ browser.menus.create({
   title: browser.i18n.getMessage("menuEzRead"),
   contexts: ["selection"]
 }, onCreated);
-browser.menus.create({
-  id: "separator-1",
-  type: "separator",
-  contexts: ["all"]
-}, onCreated);
 
+
+/**
 browser.menus.create({
   id: "open-options",
   title: browser.i18n.getMessage("menuItemOpenSidebar"),
   contexts: ["all"],
   command: "_execute_sidebar_action"
 }, onCreated);
-
+*/
 browser.menus.create({
   id: "tools-menu",
   title: browser.i18n.getMessage("menuItemToolsMenu"),
@@ -63,14 +61,7 @@ Set a colored border on the document in the given tab.
 Note that this only work on normal web pages, not special pages
 like about:debugging.
 */
-var blue = 'document.body.style.border = "5px solid blue"';
-var green = 'document.body.style.border = "5px solid green"';
 
-function borderify(tabId, color) {
-  browser.tabs.executeScript(tabId, {
-    code: color
-  });
-}
 
 /*
 Toggle checkedState, and update the menu item's title
@@ -124,17 +115,8 @@ browser.menus.onClicked.addListener((info, tab) => {
     case "log-selection":
       console.log(info.selectionText);
       break;
-    case "bluify":
-      borderify(tab.id, blue);
-      break;
-    case "open-sidebar":
-      console.log("Opening my sidebar");
-      break;
     case "open-EzRead":
       processAJAX(info.selectionText);
-      break;
-    case "tools-menu":
-      console.log("Clicked the tools menu item");
       break;
   }
 });
