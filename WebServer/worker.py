@@ -74,5 +74,5 @@ def ezLaunchDoc(selection):
     document = service.documents().create(body=body).execute()
     result = service.documents().batchUpdate(documentId=document.get("documentId"), body={'requests':requests}).execute()
 
-
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
