@@ -1,0 +1,9 @@
+Websites
+https://www.analyticsvidhya.com/blog/2018/11/introduction-text-summarization-textrank-python/
+https://help.pythonanywhere.com/pages/Flask/
+https://developers.google.com/docs/api/
+https://github.com/thomasschmied/Text_Summarization_with_Tensorflow/blob/master/summarizer_github_issues.ipynb
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Context_menu_items
+https://hackernoon.com/text-summarization-using-keras-models-366b002408d9
+Walkthrough that I used for the TextRank of my code
+https://stackabuse.com/text-summarization-with-nltk-in-python/
