@@ -17,6 +17,8 @@ SCOPES = ['https://www.googleapis.com/auth/documents', 'https://www.googleapis.c
 logging.basicConfig(level=logging.DEBUG)
 # The ID of a document.
 DOCUMENT_ID = '195j9eDD3ccgjQRttHhJPymLJUCOUjs-jmwTrekvdjFE'
+THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+
 
 @app.route('/ezRead/endpoint',methods=['POST'])
 def ezEndpoint():
@@ -37,8 +39,8 @@ def ezLaunchDoc(selection):
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
-    if os.path.exists('token.pickle'):
-        with open('token.pickle', 'rb') as token:
+    if os.path.exists(os.path.join(THIS_FOLDER, 'token.pickle')):
+        with open(os.path.join(THIS_FOLDER, 'token.pickle'), 'rb') as token:
             creds = pickle.load(token)
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
@@ -46,10 +48,10 @@ def ezLaunchDoc(selection):
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                'credentials.json', SCOPES)
+                os.path.join(THIS_FOLDER, 'credentials.txt'), SCOPES)
             creds = flow.run_local_server()
         # Save the credentials for the next run
-        with open('token.pickle', 'wb') as token:
+        with open(os.path.join(THIS_FOLDER, 'token.pickle'), 'wb') as token:
             pickle.dump(creds, token)
 
     service = build('docs', 'v1', credentials=creds)
@@ -74,5 +76,7 @@ def ezLaunchDoc(selection):
     document = service.documents().create(body=body).execute()
     result = service.documents().batchUpdate(documentId=document.get("documentId"), body={'requests':requests}).execute()
 
+
 if __name__ == '__main__':
     app.run(debug=True)
+
