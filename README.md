@@ -17,6 +17,7 @@ The extension consists of a manifest file, javascript script, and any resources 
  * Webserver
  
  This folder contains the web app that is currently being hosted on  WinkKurt.pythonanywhere.com
+
  The web app is made in Python flask, runs in 2.7. TextRank.py is the textranking summary script being used to process 
  data while worker.py is the Flask itself and handling of OAuth2.
  
@@ -37,7 +38,7 @@ The extension consists of a manifest file, javascript script, and any resources 
  
  1. Go to about:debugging in your firefox browser
  2. Click on Load Temporary Add-On
- 3. Selection either manifest.json or background.js from inside the Extension folder
+ 3. Select either manifest.json or background.js from inside the Extension folder
  
  The extension should now be loaded
  
