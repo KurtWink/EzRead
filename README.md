@@ -44,7 +44,7 @@ The extension consists of a manifest file, javascript script, and any resources 
  ### Using the extension
  
  Select any body of text and right click. In the right click menu there should be an addtional button in the dropdown named EzRead.
-  Clicking it should send any collected text over to the PythonAnywhere flask app which will then a new document with a summary in the currently signed in Google Drive.
+  Clicking it should send any collected text over to the PythonAnywhere flask app which will then create a new document with a summary in the currently signed in Google Drive.
   
   ### Important Google Account Notice
   
@@ -54,5 +54,5 @@ The extension consists of a manifest file, javascript script, and any resources 
    
   ### How is this Summary made?
   In simple terms: Each sentence is given a score which is computed from a graph of k-most 'similar sentences'. Then they are ranked and posted based on there scored.
-  Right now the output is 7 sentences. 
+  Right now the max output is 7 sentences. So any text smaller than that is rather pointless. A setting variable may come in the future to change how big the summary should be. 
   A better and more detailed explaintion can be found at <https://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf>
