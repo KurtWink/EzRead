@@ -44,7 +44,7 @@ The extension consists of a manifest file, javascript script, and any resources 
  ### Using the extension
  
  Select any body of text and right click. In the right click menu there should be an addtional button in the dropdown named EzRead.
-  Clicking it should send any collected text over to the PythonAnywhere flask app which will then a new document with a summary in the currently signed in Google Drive.
+  Clicking it should send any collected text over to the PythonAnywhere flask app which will then create a new document with a summary in the currently signed in Google Drive.
   
   ### Important Google Account Notice
   
